@@ -1,0 +1,27 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import * as fromContainers from "@app/manager/containers";
+import * as fromComponents from "@app/manager/components";
+
+const routes: Routes = [
+  {
+    path: '',
+    component: fromContainers.ManagerHomeComponent,
+    children: [
+      {
+        path: 'home',
+        component: fromContainers.ManagerHomeComponent,
+      },
+      {
+        path: '**',
+        redirectTo: 'home'
+      }
+    ]
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class ManagerRoutingModule { }

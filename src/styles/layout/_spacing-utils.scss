@@ -1,0 +1,63 @@
+@use 'layout-utils';
+
+@each $size, $size_value in layout-utils.$spaces-sizes {
+  /*** PADDINGS ***/
+
+  .padding-#{$size} {
+    @include layout-utils.padding($size_value);
+  }
+
+  .padding-left-#{$size} {
+    @include layout-utils.padding-left($size_value);
+  }
+
+  .padding-right-#{$size} {
+    @include layout-utils.padding-right($size_value);
+  }
+
+  .padding-top-#{$size} {
+    @include layout-utils.padding-top($size_value);
+  }
+
+  .padding-bottom-#{$size} {
+    @include layout-utils.padding-bottom($size_value);
+  }
+
+  .padding-horizontal-#{$size} {
+    @include layout-utils.padding-horizontal($size_value);
+  }
+
+  .padding-vertical-#{$size} {
+    @include layout-utils.padding-vertical($size_value);
+  }
+
+  /*** MARGINS ***/
+
+  .margin-#{$size} {
+    @include layout-utils.margin($size_value);
+  }
+
+  .margin-left-#{$size} {
+    @include layout-utils.margin-left($size_value);
+  }
+
+  .margin-right-#{$size} {
+    @include layout-utils.margin-right($size_value);
+  }
+
+  .margin-top-#{$size} {
+    @include layout-utils.margin-top($size_value);
+  }
+
+  .margin-bottom-#{$size} {
+    @include layout-utils.margin-bottom($size_value);
+  }
+
+  .margin-horizontal-#{$size} {
+    @include layout-utils.margin-horizontal($size_value);
+  }
+
+  .margin-vertical-#{$size} {
+    @include layout-utils.margin-vertical($size_value);
+  }
+}

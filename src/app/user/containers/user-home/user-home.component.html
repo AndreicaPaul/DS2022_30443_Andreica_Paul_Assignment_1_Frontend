@@ -1,0 +1,13 @@
+<div *ngIf="!loading" class="width-full height-full" fxLayout="column" fxLayoutAlign="start center">
+  <div class="user-title accent-color mat-display-3" *ngIf="userName">Hello {{userName}}!</div>
+  <div class="title accent-color mat-display-3">Select a Device</div>
+
+  <button
+    mat-flat-button
+    color="primary"
+    class="restaurant"
+    (click)="sendMail()"
+  >
+    SEND TEST MAIL
+  </button>
+</div>

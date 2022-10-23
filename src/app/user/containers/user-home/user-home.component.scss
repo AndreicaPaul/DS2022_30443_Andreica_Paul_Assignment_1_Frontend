@@ -1,0 +1,22 @@
+@use 'layout/host';
+@use 'themes/theme';
+
+:host {
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+.user-title {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.restaurant {
+  width: 400px;
+  margin: 24px;
+}

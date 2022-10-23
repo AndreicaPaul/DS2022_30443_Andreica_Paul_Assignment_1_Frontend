@@ -1,0 +1,27 @@
+@use '@angular/material' as mat;
+
+@use 'base/font';
+
+$OpenSans-font-family: 'OpenSans', sans-serif;
+
+$custom-typography: mat.define-typography-config(
+  $font-family: $OpenSans-font-family,
+  $display-4:
+    mat.define-typography-level(48px, 40px, 700, $OpenSans-font-family),
+  $display-3:
+    mat.define-typography-level(40px, 40px, 700, $OpenSans-font-family),
+  $display-2:
+    mat.define-typography-level(24px, 40px, 700, $OpenSans-font-family),
+  $display-1:
+    mat.define-typography-level(24px, 40px, 400, $OpenSans-font-family),
+  $headline: mat.define-typography-level(20px, 40px, 400, $OpenSans-font-family),
+  $title: mat.define-typography-level(18px, 32px, 400, $OpenSans-font-family),
+  $subheading-2:
+    mat.define-typography-level(16px, 28px, 400, $OpenSans-font-family),
+  $subheading-1:
+    mat.define-typography-level(15px, 24px, 400, $OpenSans-font-family),
+  $body-1: mat.define-typography-level(16px, 24px, 400, $OpenSans-font-family),
+  $body-2: mat.define-typography-level(16px, 24px, 600, $OpenSans-font-family),
+  $button: mat.define-typography-level(18px, 24px, 700, $OpenSans-font-family),
+  $caption: mat.define-typography-level(12px, 17px, 400, $OpenSans-font-family)
+);

@@ -1,0 +1,34 @@
+@use '@angular/material' as mat;
+
+@use 'themes/theme';
+@use 'base/typography';
+@use 'utilities/media-queries';
+
+@mixin app-radio-button {
+  .mat-radio-button {
+    @include mat.typography-level(typography.$custom-typography, 'body-1');
+  }
+
+  .mat-radio-button .mat-radio-ripple {
+    display: none;
+  }
+
+  .mat-radio-outer-circle {
+    border-width: 1px !important;
+    border-color: theme.$app-dark-gray;
+  }
+
+  .mat-radio-checked .mat-radio-inner-circle {
+    transform: scale(0.7) !important;
+  }
+
+  .mat-radio-label-content {
+    padding: 0 16px 0 8px !important;
+  }
+
+  @include media-queries.media-query(md) {
+    .mat-radio-label-content {
+      padding: 0 32px 0 16px !important;
+    }
+  }
+}

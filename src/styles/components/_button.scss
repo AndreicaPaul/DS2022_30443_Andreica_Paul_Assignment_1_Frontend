@@ -1,0 +1,66 @@
+@use '@angular/material' as mat;
+
+@use 'base/typography';
+@use 'themes/theme';
+@use 'utilities/media-queries';
+
+@include mat.button-typography(
+  map-get(typography.$custom-typography, 'body-1')
+);
+
+@mixin app-button {
+  .mat-flat-button {
+    padding: 8px 48px !important;
+    width: fit-content;
+    border-radius: 16px !important;
+
+    @include media-queries.media-query(md) {
+      padding: 8px 64px !important;
+    }
+  }
+
+  .mat-flat-button.mat-primary:hover,
+  .mat-mini-fab.mat-primary:hover {
+    background-color: map-get(theme.$app-primary-palette, 900);
+  }
+
+  .mat-flat-button.mat-warn:hover,
+  .mat-mini-fab.mat-warn:hover {
+    background-color: map-get(theme.$app-error-palette, 900);
+  }
+
+  .mat-flat-button.mat-button-disabled.mat-button-disabled {
+    background-color: theme.$app-medium-gray;
+    color: theme.$app-dark-gray;
+  }
+
+  .mat-mini-fab,
+  .mat-fab {
+    &:not([class*='mat-elevation-z']) {
+      box-shadow: none;
+    }
+
+    &:not(.mat-button-disabled):active:not([class*='mat-elevation-z']) {
+      box-shadow: none;
+    }
+
+    .mat-button-wrapper {
+      display: flex !important;
+      justify-content: center;
+    }
+  }
+
+  .mat-fab {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .cancel-button {
+    background-color: theme.$app-light-gray;
+    color: theme.$app-dark-contrast;
+  }
+
+  .cancel-button:hover {
+    background-color: theme.$app-medium-gray;
+  }
+}

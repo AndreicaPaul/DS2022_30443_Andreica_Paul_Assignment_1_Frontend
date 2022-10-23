@@ -1,0 +1,7 @@
+@use 'layout/host';
+@use 'themes/theme';
+
+:host {
+  height: 100%;
+  width: 100%;
+}

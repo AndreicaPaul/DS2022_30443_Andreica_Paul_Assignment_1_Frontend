@@ -1,0 +1,12 @@
+@use 'layout/host';
+
+:host {
+  flex-direction: row;
+  height: 100%;
+}
+
+.welcome-section {
+  background: transparent linear-gradient(180deg, #cccccc 0%, #7070ff 100%) 0 0
+    no-repeat padding-box;
+  width: 50%;
+}

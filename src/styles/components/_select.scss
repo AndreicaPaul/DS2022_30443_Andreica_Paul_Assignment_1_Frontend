@@ -1,0 +1,5 @@
+@mixin app-select {
+  .no-max-width-select {
+    max-width: unset !important;
+  }
+}

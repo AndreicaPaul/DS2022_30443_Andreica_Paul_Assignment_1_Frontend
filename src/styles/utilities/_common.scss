@@ -1,0 +1,108 @@
+@use 'themes/theme';
+
+@mixin icon-size($size) {
+  font-size: $size;
+  line-height: $size !important;
+  width: $size !important;
+  height: $size !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.display-none {
+  display: none;
+}
+
+.transparent-color {
+  color: transparent !important;
+}
+
+.prevent-text-highlight {
+  user-select: none;
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
+}
+
+.light-contrast-color {
+  color: theme.$app-light-contrast;
+}
+
+.light-contrast-fill {
+  fill: theme.$app-light-contrast !important;
+}
+
+.dark-contrast-color {
+  color: theme.$app-dark-contrast;
+}
+
+.dark-contrast-fill {
+  fill: theme.$app-dark-contrast;
+}
+
+.dark-gray-color {
+  color: theme.$app-dark-gray;
+}
+
+.medium-gray-color {
+  color: theme.$app-medium-gray;
+}
+
+.light-gray-color {
+  color: theme.$app-light-gray;
+}
+
+.primary-color {
+  color: theme.$app-primary;
+}
+
+.primary-fill {
+  fill: theme.$app-primary;
+}
+
+.accent-color {
+  color: theme.$app-secondary;
+}
+
+.accent-fill {
+  color: theme.$app-secondary;
+}
+
+.warn-color {
+  color: theme.$app-error;
+}
+
+.warn-fill {
+  fill: theme.$app-error !important;
+}
+
+.in-place-error {
+  height: 17px;
+}
+
+.relative-position {
+  position: relative;
+}
+
+.absolute-position {
+  position: absolute;
+}
+
+.scroll-overflow {
+  overflow: scroll;
+}
+
+.overflow-y {
+  overflow-y: auto;
+}

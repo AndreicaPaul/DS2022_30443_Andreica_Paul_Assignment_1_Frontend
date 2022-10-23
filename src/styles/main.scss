@@ -1,0 +1,48 @@
+@use '@angular/material' as mat;
+
+@use 'base/typography';
+@use 'themes/theme';
+
+@use 'components/button';
+@use 'components/input';
+@use 'components/radio-button';
+@use 'components/select';
+
+@use 'utilities/common';
+@use 'layout/layout-utils';
+@use 'layout/spacing-utils';
+
+@include mat.core(typography.$custom-typography);
+@include mat.all-component-themes(theme.$app-theme);
+
+@include button.app-button();
+@include input.app-input();
+@include radio-button.app-radio-button();
+@include select.app-select;
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: typography.$OpenSans-font-family;
+  color: theme.$app-dark-contrast;
+}
+
+span {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+mat-error {
+  @include mat.typography-level(typography.$custom-typography, 'caption');
+}

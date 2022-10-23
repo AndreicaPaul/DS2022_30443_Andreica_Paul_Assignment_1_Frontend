@@ -1,0 +1,19 @@
+@use 'utilities/media-queries';
+@use 'themes/theme';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  width: 90%;
+  height: 100%;
+}
+
+@include media-queries.media-query(md) {
+  :host {
+    width: 75%;
+    height: unset;
+  }
+}

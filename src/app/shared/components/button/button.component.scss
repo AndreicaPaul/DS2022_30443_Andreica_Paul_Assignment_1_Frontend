@@ -1,0 +1,14 @@
+@use 'layout/layout-utils';
+@use 'themes/theme';
+
+button {
+  position: relative;
+}
+
+mat-spinner {
+  @include layout-utils.absolute-centered();
+}
+
+.mat-spinner.disabled::ng-deep circle {
+  stroke: theme.$app-dark-gray !important;
+}

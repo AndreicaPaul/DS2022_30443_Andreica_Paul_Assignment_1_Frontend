@@ -1,0 +1,15 @@
+@use 'themes/theme';
+
+@mixin app-base {
+  .primary-color {
+    color: theme.$app-primary;
+  }
+
+  .accent-color {
+    color: theme.$app-secondary;
+  }
+
+  .warn-color {
+    color: theme.$app-error;
+  }
+}

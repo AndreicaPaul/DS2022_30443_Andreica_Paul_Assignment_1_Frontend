@@ -1,0 +1,6 @@
+<div class="width-full height-full" fxLayout="column" fxLayoutAlign="center stretch" >
+  <app-manager-first-time
+    *ngIf="firstTime"
+    [availableLocations]="locations$ | async"
+  ></app-manager-first-time>
+</div>

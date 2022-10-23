@@ -1,0 +1,121 @@
+@use '@angular/material' as mat;
+
+$app-dark-contrast: #061b29;
+$app-dark-gray: #a7a7a7;
+$app-medium-gray: #e8e8e8;
+$app-light-gray: #f2f2f7;
+$app-light-contrast: #fff;
+
+$app-primary-palette: (
+  50: #e7f4f6,
+  100: #c2e4e8,
+  200: #99d2d9,
+  300: #70bfc9,
+  400: #52b2be,
+  500: #33a4b2,
+  600: #2e9cab,
+  700: #2792a2,
+  800: #208999,
+  900: #14788a,
+  A100: #bef4ff,
+  A200: #8becff,
+  A400: #58e3ff,
+  A700: #3fdfff,
+  contrast: (
+    50: $app-dark-contrast,
+    100: $app-dark-contrast,
+    200: $app-dark-contrast,
+    300: $app-dark-contrast,
+    400: $app-dark-contrast,
+    500: $app-light-contrast,
+    600: $app-light-contrast,
+    700: $app-light-contrast,
+    800: $app-light-contrast,
+    900: $app-light-contrast,
+    A100: $app-dark-contrast,
+    A200: $app-dark-contrast,
+    A400: $app-dark-contrast,
+    A700: $app-dark-contrast
+  )
+);
+
+$app-secondary-palette: (
+  50: #e1e9ee,
+  100: #b5c8d4,
+  200: #84a4b7,
+  300: #537f9a,
+  400: #2e6385,
+  500: #09486f,
+  600: #084167,
+  700: #06385c,
+  800: #053052,
+  900: #022140,
+  A100: #75afff,
+  A200: #4291ff,
+  A400: #0f73ff,
+  A700: #0066f5,
+  contrast: (
+    50: $app-dark-contrast,
+    100: $app-dark-contrast,
+    200: $app-dark-contrast,
+    300: $app-light-contrast,
+    400: $app-light-contrast,
+    500: $app-light-contrast,
+    600: $app-light-contrast,
+    700: $app-light-contrast,
+    800: $app-light-contrast,
+    900: $app-light-contrast,
+    A100: $app-dark-contrast,
+    A200: $app-dark-contrast,
+    A400: $app-light-contrast,
+    A700: $app-light-contrast
+  )
+);
+
+$app-error-palette: (
+  50: #fbe8ec,
+  100: #f6c5cf,
+  200: #f09faf,
+  300: #e9788e,
+  400: #e55b76,
+  500: #e03e5e,
+  600: #dc3856,
+  700: #d8304c,
+  800: #d32842,
+  900: #cb1b31,
+  A100: $app-light-contrast,
+  A200: #ffcdd2,
+  A400: #ff9aa4,
+  A700: #ff808e,
+  contrast: (
+    50: $app-dark-contrast,
+    100: $app-dark-contrast,
+    200: $app-dark-contrast,
+    300: $app-dark-contrast,
+    400: $app-dark-contrast,
+    500: $app-light-contrast,
+    600: $app-light-contrast,
+    700: $app-light-contrast,
+    800: $app-light-contrast,
+    900: $app-light-contrast,
+    A100: $app-dark-contrast,
+    A200: $app-dark-contrast,
+    A400: $app-dark-contrast,
+    A700: $app-dark-contrast
+  )
+);
+
+$app-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: mat.define-palette($app-primary-palette),
+      accent: mat.define-palette($app-secondary-palette),
+      warn: mat.define-palette($app-error-palette)
+    )
+  )
+);
+
+$app-primary: map-get($app-primary-palette, 500);
+$app-secondary: map-get($app-secondary-palette, 500);
+$app-error: map-get($app-error-palette, 500);
+$background-color: #f2f3f7;

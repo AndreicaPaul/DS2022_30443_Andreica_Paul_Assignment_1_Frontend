@@ -1,0 +1,15 @@
+@use 'layout/host';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-radio-group {
+  position: relative;
+}
+
+mat-error {
+  position: absolute;
+  bottom: -24px;
+}

@@ -1,0 +1,15 @@
+@use 'themes/theme';
+
+.auth-switch {
+  background-color: theme.$app-light-gray;
+  border-radius: 42px;
+  width: 320px;
+
+  &__option {
+    &--on {
+      border-radius: 42px;
+      background-color: theme.$app-light-contrast;
+      color: theme.$app-secondary;
+    }
+  }
+}

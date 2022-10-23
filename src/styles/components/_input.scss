@@ -1,0 +1,145 @@
+@use '@angular/material' as mat;
+
+@use 'themes/theme';
+@use 'base/typography';
+@use 'utilities/media-queries';
+
+@mixin app-input {
+  .mat-form-field-flex {
+    height: 50px;
+  }
+
+  app-textarea .mat-form-field-flex {
+    height: 64px;
+  }
+
+  .mat-form-field-wrapper {
+    margin: 0.5rem 0 0 0 !important;
+  }
+
+  .mat-form-field-appearance-outline {
+    .mat-form-field-outline {
+      top: 0 !important;
+    }
+
+    .mat-form-field-label {
+      position: relative;
+      transform: translateY(-1.8em) scale(0.75);
+    }
+
+    .mat-form-field-outline,
+    .mat-form-field-label {
+      color: theme.$app-dark-gray;
+    }
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+    .mat-form-field-label {
+    transform: translateY(-1.8em) scale(0.75);
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-disabled {
+    .mat-form-field-outline,
+    .mat-form-field-label {
+      color: theme.$app-medium-gray;
+    }
+  }
+
+  .mat-form-field-appearance-outline {
+    .mat-form-field-outline-start {
+      width: 24px !important;
+      border-radius: 12px 0 0 12px !important;
+    }
+
+    .mat-form-field-outline-end {
+      border-radius: 0 12px 12px 0 !important;
+    }
+
+    .mat-form-field-outline-gap {
+      border-top-color: transparent !important;
+    }
+
+    .mat-form-field-subscript-wrapper {
+      padding: 0 0.5rem !important;
+    }
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-gap,
+    .mat-form-field-outline-end {
+      border-width: 1px !important;
+    }
+  }
+
+  .mat-form-field-infix {
+    border: 0;
+    padding: 0 !important;
+    height: 100%;
+    display: flex !important;
+    justify-content: center;
+    @include mat.typography-level(typography.$custom-typography, 'body-1');
+
+    input.mat-input-element {
+      margin-top: 0;
+    }
+  }
+
+  .mat-form-field-label-wrapper {
+    padding: 0 !important;
+    top: -6px !important;
+    left: 16px !important;
+    //width: unset !important; // TODO Why this?
+    @include mat.typography-level(typography.$custom-typography, 'body-1');
+  }
+
+  .mat-form-field .mat-form-field-required-marker {
+    display: none;
+  }
+
+  .mat-form-field-subscript-wrapper {
+    margin-top: 0.25rem;
+  }
+
+  .mat-form-field-suffix {
+    top: 6px !important;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .mat-form-field mat-select .mat-select-trigger {
+    top: 14px;
+  }
+
+  .mat-form-field mat-select .mat-select-trigger .mat-select-arrow-wrapper {
+    transform: none;
+  }
+
+  textarea.mat-input-element {
+    resize: none !important;
+    margin: 8px 0 !important;
+  }
+
+  .mat-form-field.mat-form-field-hide-placeholder {
+    .mat-form-field-infix {
+      .mat-input-element::placeholder {
+        color: red !important;
+        -webkit-text-fill-color: red !important;
+      }
+    }
+  }
+
+  @include media-queries.media-query(md) {
+    app-textarea .mat-form-field-flex {
+      height: 124px;
+    }
+
+    textarea.mat-input-element {
+      margin: 16px 0 !important;
+    }
+  }
+}
