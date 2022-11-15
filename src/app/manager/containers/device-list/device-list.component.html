@@ -1,0 +1,35 @@
+<div class="wrapper width-full height-full" (window:resize)="onWindowResize()" fxLayout="column">
+  <button
+    cdkOverlayOrigin
+    #overlayOrigin="cdkOverlayOrigin"
+    mat-flat-button class="add-device width-full"
+    color="accent"
+    (click)="addNewDeviceOverlayOpened = !addNewDeviceOverlayOpened"
+  >
+    Add a new Device
+  </button>
+  <ag-grid-angular
+    class="ag-theme-alpine width-full height-full"
+    [rowData]="devices"
+    [rowDragManaged]="true"
+    [animateRows]="true"
+    rowSelection="single"
+    [getRowNodeId]="getRowNodeId"
+    [columnDefs]="columns"
+    [gridOptions]="gridOptions"
+    [overlayLoadingTemplate]="'Loading Devices'"
+    [overlayNoRowsTemplate]="'No Devices Available'"
+    (cellValueChanged)="onCellValueChange($event)"
+    (gridReady)="onGridReady($event)"
+  >
+  </ag-grid-angular>
+</div>
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="overlayOrigin"
+  [cdkConnectedOverlayOpen]="addNewDeviceOverlayOpened"
+  (backdropClick)="addNewDeviceOverlayOpened = false"
+  [cdkConnectedOverlayHasBackdrop]="true"
+>
+  <app-add-new-device (save)="onSaveDevice($event)"></app-add-new-device>
+</ng-template>

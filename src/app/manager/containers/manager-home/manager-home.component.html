@@ -1,6 +1,11 @@
-<div class="width-full height-full" fxLayout="column" fxLayoutAlign="center stretch" >
-  <app-manager-first-time
-    *ngIf="firstTime"
-    [availableLocations]="locations$ | async"
-  ></app-manager-first-time>
+<a href="login">Logout</a>
+<div fxLayout="column" class="wrapper">
+  <span class="mat-display-1">Hello</span>
+  <div fxLayout="row" fxLayoutGap="16">
+  <button mat-raised-button color="primary" class="button" (click)="onShowUsers()">Users</button>
+  <button mat-raised-button color="primary" class="button" (click)="onShowDevices()">Devices</button>
+  </div>
+  <div class="width-full height-full">
+    <router-outlet></router-outlet>
+  </div>
 </div>

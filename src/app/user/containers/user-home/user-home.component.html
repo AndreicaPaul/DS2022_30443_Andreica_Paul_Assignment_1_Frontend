@@ -1,13 +1,19 @@
-<div *ngIf="!loading" class="width-full height-full" fxLayout="column" fxLayoutAlign="start center">
+<a href="login">Logout</a>
+<div *ngIf="!loading" (window:resize)="onWindowResize()" class="width-full height-full padding-xl" fxLayout="column" fxLayoutAlign="start center">
   <div class="user-title accent-color mat-display-3" *ngIf="userName">Hello {{userName}}!</div>
-  <div class="title accent-color mat-display-3">Select a Device</div>
-
-  <button
-    mat-flat-button
-    color="primary"
-    class="restaurant"
-    (click)="sendMail()"
+  <div fxFlexAlign="start" class="title accent-color mat-display-3">Your Devices:</div>
+  <ag-grid-angular
+    class="ag-theme-alpine width-full height-full"
+    [rowData]="devices"
+    [rowDragManaged]="true"
+    [animateRows]="true"
+    rowSelection="single"
+    [getRowNodeId]="getRowNodeId"
+    [columnDefs]="columns"
+    [gridOptions]="gridOptions"
+    [overlayLoadingTemplate]="'Loading Devices'"
+    [overlayNoRowsTemplate]="'No Devices Available'"
+    (gridReady)="onGridReady($event)"
   >
-    SEND TEST MAIL
-  </button>
+  </ag-grid-angular>
 </div>

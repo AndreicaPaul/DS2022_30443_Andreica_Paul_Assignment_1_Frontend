@@ -40,9 +40,9 @@ export class LoginComponent {
       .subscribe({
         next: () => {
           if (loginRequest.userRole === UserType.ADMIN) {
-            this.router.navigate(['manager/home']);
+            this.router.navigate(['manager']);
           } else {
-            this.router.navigate(['user/home']);
+            this.router.navigate(['user']);
           }
         },
         error: (error:HttpErrorResponse) =>

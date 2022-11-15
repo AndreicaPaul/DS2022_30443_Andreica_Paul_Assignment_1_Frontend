@@ -1,7 +1,10 @@
 @use 'layout/host';
-@use 'themes/theme';
 
-:host {
-  height: 100%;
-  width: 100%;
+.wrapper {
+  height: 100vh;
+  padding: 32px;
+}
+
+.button {
+  width: 200px;
 }

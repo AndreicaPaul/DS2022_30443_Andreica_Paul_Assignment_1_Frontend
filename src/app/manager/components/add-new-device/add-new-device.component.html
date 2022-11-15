@@ -1,0 +1,28 @@
+<div class="wrapper padding-m" fxLayout="column">
+  <div class="header height-full margin-m">Add new Device</div>
+
+  <form
+    [formGroup]="form"
+    fxLayout="column"
+    fxLayoutAlign="space-between center"
+    class="width-full height-full"
+  >
+    <div fxLayout="column" class="width-full margin-bottom-l">
+      <app-input
+        [label]="'Name'"
+        [control]="nameControl"
+      ></app-input>
+
+      <app-input
+        [label]="'Description'"
+        [control]="descriptionControl"
+      ></app-input>
+
+      <app-input
+        [label]="'Maximum Hourly Consumption'"
+        [control]="maximumHourlyConsumptionControl"
+      ></app-input>
+    </div>
+  </form>
+  <button color="accent" mat-raised-button class="height-full" (click)="onSaveDevice()">ADD DEVICE</button>
+</div>

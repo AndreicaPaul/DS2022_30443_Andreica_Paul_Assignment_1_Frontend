@@ -1,0 +1,35 @@
+<div class="wrapper width-full height-full" (window:resize)="onWindowResize()" fxLayout="column">
+  <button
+    cdkOverlayOrigin
+    #overlayOrigin="cdkOverlayOrigin"
+    mat-flat-button class="add-user width-full"
+    color="accent"
+    (click)="addNewUserOverlayOpened = !addNewUserOverlayOpened"
+  >
+    Add a new User
+  </button>
+  <ag-grid-angular
+    class="ag-theme-alpine width-full height-full"
+    [rowData]="users"
+    [rowDragManaged]="true"
+    [animateRows]="true"
+    rowSelection="single"
+    [getRowNodeId]="getRowNodeId"
+    [columnDefs]="columns"
+    [gridOptions]="gridOptions"
+    [overlayLoadingTemplate]="'Loading Users'"
+    [overlayNoRowsTemplate]="'No Users Available'"
+    (cellValueChanged)="onCellValueChange($event)"
+    (gridReady)="onGridReady($event)"
+  >
+  </ag-grid-angular>
+</div>
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="overlayOrigin"
+  [cdkConnectedOverlayOpen]="addNewUserOverlayOpened"
+  (backdropClick)="addNewUserOverlayOpened = false"
+  [cdkConnectedOverlayHasBackdrop]="true"
+>
+  <app-add-new-user (register)="onRegister($event)"></app-add-new-user>
+</ng-template>

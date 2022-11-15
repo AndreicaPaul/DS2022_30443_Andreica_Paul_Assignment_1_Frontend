@@ -15,27 +15,23 @@ export class ApiService {
   }
 
   get(path: string): Observable<any> {
-    const isAdmin = sessionStorage.getItem('role') === UserType.ADMIN;
-    return this.http.get(environment.apiURL + isAdmin ? '/admin' : '' + path, httpOptions);
+    return this.http.get(`${environment.apiURL}${path}`, httpOptions);
   }
 
   post(path: string, payload: any, params?: any): Observable<any> {
-    const isAdmin = sessionStorage.getItem('role') && sessionStorage.getItem('role') === UserType.ADMIN;
     if(params) {
       const _httpOptions = {httpOptions, params: params};
-      return this.http.post(environment.apiURL  + path, payload, _httpOptions);
+      return this.http.post(`${environment.apiURL}${path}`, payload, _httpOptions);
     }
-    return this.http.post(environment.apiURL +  path, payload, httpOptions);
+    return this.http.post(`${environment.apiURL}${path}`, payload, httpOptions);
   }
 
   put(path: string, payload: any): Observable<any> {
-    const isAdmin = sessionStorage.getItem('role') === UserType.ADMIN;
-    return this.http.put(environment.apiURL + isAdmin ? '/admin' : '' + path, payload, httpOptions);
+    return this.http.put(`${environment.apiURL}${path}`, payload, httpOptions);
   }
 
   delete(path: string): Observable<any> {
-    const isAdmin = sessionStorage.getItem('role') === UserType.ADMIN;
-    return this.http.delete(environment.apiURL + isAdmin ? '/admin' : '' + path, httpOptions);
+    return this.http.delete(`${environment.apiURL}${path}`, httpOptions);
   }
 
 }

@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ManagersService} from "@app/manager/services";
-import { Location } from "@app/manager/types/interfaces";
-import {Observable} from "rxjs";
-import {UserService} from "@app/shared/services/user.service";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-manager-home',
@@ -11,15 +8,17 @@ import {UserService} from "@app/shared/services/user.service";
 })
 export class ManagerHomeComponent implements OnInit {
 
-  public locations$: Observable<Location[]>;
-  public firstTime: boolean = true;
-  constructor(private managersService: ManagersService,
-              private userService: UserService,
-  ) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
-  ngOnInit(): void {
-    this.userService.setUser().subscribe((user) => {
-    });
-    this.locations$ = this.managersService.getLocations();
+  ngOnInit() {
+    this.router.navigate(['users'],{relativeTo: this.activatedRoute});
+  }
+
+  onShowUsers() {
+    this.router.navigate(['users'], {relativeTo: this.activatedRoute});
+  }
+
+  onShowDevices() {
+    this.router.navigate(['devices'], {relativeTo: this.activatedRoute});
   }
 }

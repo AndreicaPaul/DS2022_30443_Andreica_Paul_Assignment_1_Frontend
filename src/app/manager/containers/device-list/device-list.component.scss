@@ -1,0 +1,9 @@
+.add-device {
+  align-self: end;
+  margin: 8px 0;
+  border-radius: 4px !important;
+}
+
+:host ::ng-deep .mat-form-field {
+  line-height: 1.6;
+}

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import * as fromContainers from "@app/manager/containers";
-import * as fromComponents from "@app/manager/components";
 
 const routes: Routes = [
   {
@@ -9,15 +8,15 @@ const routes: Routes = [
     component: fromContainers.ManagerHomeComponent,
     children: [
       {
-        path: 'home',
-        component: fromContainers.ManagerHomeComponent,
+        path: 'devices',
+        component: fromContainers.DeviceListComponent,
       },
       {
-        path: '**',
-        redirectTo: 'home'
+        path: 'users',
+        component: fromContainers.UserListComponent,
       }
     ]
-  }
+  },
 ];
 
 @NgModule({

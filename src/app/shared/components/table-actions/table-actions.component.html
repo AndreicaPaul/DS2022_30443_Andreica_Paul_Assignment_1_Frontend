@@ -1,0 +1,11 @@
+<section fxLayout="row" fxLayoutAlign="end">
+  <button
+    *ngFor="let action of tableActions"
+    mat-icon-button
+    [attr.aria-label]="action.label"
+    color="primary"
+    (click)="action.onAction(entityId)"
+  >
+    <mat-icon [svgIcon]="action.icon"></mat-icon>
+  </button>
+</section>

@@ -1,0 +1,32 @@
+<div class="wrapper padding-m" fxLayout="column">
+  <div class="header height-full margin-m">Add new user</div>
+
+  <form
+    [formGroup]="form"
+    fxLayout="column"
+    fxLayoutAlign="space-between center"
+    class="width-full height-full"
+  >
+    <div fxLayout="column" class="width-full margin-bottom-l">
+      <app-input
+        [label]="'labels.email' | translate"
+        [control]="emailControl"
+      ></app-input>
+      <app-input
+        [label]="'labels.password' | translate"
+        [control]="passwordControl"
+        [type]="'password'"
+      ></app-input>
+      <app-input
+        [label]="'labels.confirmPassword' | translate"
+        [control]="confirmPasswordControl"
+        [type]="'password'"
+      ></app-input>
+      <app-input
+        [label]="'Username'"
+        [control]="usernameControl"
+      ></app-input>
+    </div>
+  </form>
+  <button color="accent" mat-raised-button class="height-full" (click)="onRegisterUser()">ADD USER</button>
+</div>

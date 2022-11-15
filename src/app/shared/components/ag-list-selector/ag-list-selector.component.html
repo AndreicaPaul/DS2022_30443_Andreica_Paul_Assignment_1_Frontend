@@ -1,0 +1,12 @@
+<app-select
+  [placeholder]="params.placeholder"
+  [selectMode]="selectMode"
+  [control]="control"
+  [displayFn]="params.displayFn"
+  [valueFn]="params.valueFn"
+  [inputOptions]="params.options"
+  [label]="params.label"
+  [filterable]="params.isFilterable"
+  [clear]="params.hasClear"
+  (selectionChange)="onChange()"
+></app-select>
