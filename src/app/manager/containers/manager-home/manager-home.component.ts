@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {UserService} from "@app/shared/services/user.service";
 
 @Component({
   selector: 'app-manager-home',
@@ -8,10 +9,11 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ManagerHomeComponent implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private userService: UserService) {}
 
   ngOnInit() {
     this.router.navigate(['users'],{relativeTo: this.activatedRoute});
+    this.userService.setUser().subscribe();
   }
 
   onShowUsers() {

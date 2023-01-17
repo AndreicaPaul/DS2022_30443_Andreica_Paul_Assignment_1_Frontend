@@ -6,6 +6,7 @@ import { ToggleTabComponent } from '@app/shared/components/toggle-tab/toggle-tab
 import { SelectComponent } from '@app/shared/components/select/select.component';
 import {TableActionsComponent} from "@app/shared/components/table-actions/table-actions.component";
 import {AgListSelectorComponent} from "@app/shared/components/ag-list-selector/ag-list-selector.component";
+import {ChatComponent} from "@app/shared/components/chat/chat.component";
 
 export const components = [
   InputComponent,
@@ -16,6 +17,7 @@ export const components = [
   SelectComponent,
   TableActionsComponent,
   AgListSelectorComponent,
+  ChatComponent,
 ];
 
 export * from './button/button.component';
@@ -26,3 +28,4 @@ export * from './toggle-tab/toggle-tab.component';
 export * from './select/select.component';
 export * from './table-actions/table-actions.component';
 export * from './ag-list-selector/ag-list-selector.component';
+export * from './chat/chat.component';

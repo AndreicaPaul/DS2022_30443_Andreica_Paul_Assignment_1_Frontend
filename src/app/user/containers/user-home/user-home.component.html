@@ -1,6 +1,15 @@
 <a href="login">Logout</a>
 <div *ngIf="!loading" (window:resize)="onWindowResize()" class="width-full height-full padding-xl" fxLayout="column" fxLayoutAlign="start center">
   <div class="user-title accent-color mat-display-3" *ngIf="userName">Hello {{userName}}!</div>
+  <button
+    cdkOverlayOrigin
+    #overlayOrigin="cdkOverlayOrigin"
+    mat-flat-button class="add-device width-full"
+    color="accent"
+    (click)="chatOpened = !chatOpened"
+  >
+    Chat with an Admin
+  </button>
   <div fxFlexAlign="start" class="title accent-color mat-display-3">Your Devices:</div>
   <ag-grid-angular
     class="ag-theme-alpine width-full height-full"
@@ -16,4 +25,13 @@
     (gridReady)="onGridReady($event)"
   >
   </ag-grid-angular>
+  <ng-template
+    cdkConnectedOverlay
+    [cdkConnectedOverlayOrigin]="overlayOrigin"
+    [cdkConnectedOverlayOpen]="chatOpened"
+    (backdropClick)="chatOpened = false"
+    [cdkConnectedOverlayHasBackdrop]="true"
+  >
+    <app-chat></app-chat>
+  </ng-template>
 </div>

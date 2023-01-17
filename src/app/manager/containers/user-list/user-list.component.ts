@@ -8,7 +8,9 @@ import {UserService} from "@app/shared/services/user.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {AuthService} from "@app/auth/services";
 import {debounceTime} from "rxjs/operators";
-import {TableActionsComponent} from "@app/shared/components";
+import {ChatComponent, TableActionsComponent} from "@app/shared/components";
+import {MatDialog} from "@angular/material/dialog";
+import {ChatService} from "@app/shared/services";
 
 @Component({
   selector: 'app-user-list',
@@ -35,6 +37,8 @@ export class UserListComponent implements OnInit, OnDestroy {
               private userService: UserService,
               private snackBar: MatSnackBar,
               private authService: AuthService,
+              private dialogService: MatDialog,
+              private chatService: ChatService,
   ) { }
 
   ngOnInit(): void {
@@ -119,7 +123,7 @@ export class UserListComponent implements OnInit, OnDestroy {
         },
         field: 'id',
         headerName: '',
-        maxWidth: 60,
+        maxWidth: 120,
         sortable: false,
         resizable: false,
         cellStyle: { border: 'none' },
@@ -139,6 +143,7 @@ export class UserListComponent implements OnInit, OnDestroy {
         this.initColumns();
         this.resizeGrid();
         this.users = users;
+        this.chatService.receiveMessage().then();
       });
   }
 
@@ -151,7 +156,19 @@ export class UserListComponent implements OnInit, OnDestroy {
           this.managersService.deleteUser(userId).subscribe(() => this.setUsers());
         },
       },
+      {
+        label: 'Chat with User',
+        icon: 'chat',
+        onAction: (userId: number) => {
+          this.chatService.messageFor = userId.toString();
+          this.openChatWithUser(userId);
+        }
+      }
     ];
+  }
+
+  private openChatWithUser(userId: number): void {
+   this.dialogService.open(ChatComponent);
   }
 
   ngOnDestroy(): void {

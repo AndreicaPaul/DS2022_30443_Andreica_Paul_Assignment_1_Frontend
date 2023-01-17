@@ -22,6 +22,7 @@ export class IconRegistryService {
       logo_icon: this.iconPath('logo-icon'),
       search: this.iconPath('search'),
       plus: this.iconPath('plus'),
+      chat: this.iconPath('message-circle-outline')
     };
 
     Object.keys(iconDefinitions).forEach(key => {
